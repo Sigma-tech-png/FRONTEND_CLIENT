@@ -1,7 +1,8 @@
-import { useActionData , Form } from "react-router"
+import { useActionData , Form, useNavigate } from "react-router"
 
 export default function App(){
   const ActionData = useActionData();
+  const nav = useNavigate()
 
   return(
     <>
@@ -10,9 +11,11 @@ export default function App(){
         <button>Save</button>
       </Form>
 
+      <button onClick={() => nav("/profile")}>Go profile</button>
+
       {ActionData && (
   <h1>{ActionData.name}</h1>
-)}
+    )}
     </>
   )
 }
