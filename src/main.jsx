@@ -5,9 +5,10 @@ import Profile from './pages/Profile.jsx'
 import {createBrowserRouter,RouterProvider} from "react-router"
 import {ActionForm} from "./Action/ActionForm.jsx"
 import { LoaderForm } from './Loader/LoaderForm.jsx'
+import { LoaderGet } from './Loader/LoaderGet.jsx'
 
 const router = createBrowserRouter([
-  {path:"/",element:<App/>,action:ActionForm},
+  {path:"/",element:<App/>,action:ActionForm,loader:LoaderGet},
   {path:"/profile",element:<Profile/>,loader:LoaderForm}
 ])
 
